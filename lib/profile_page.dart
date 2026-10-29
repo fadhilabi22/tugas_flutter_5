@@ -30,7 +30,7 @@ class ProfilePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Statitem(count: "15", label: "proyek"),
+                  const Statitem(count: "10", label: "proyek"),
                   const SizedBox(width: 24),
                   const Statitem(count: "1.2k", label: "Followers"),
                   const SizedBox(height: 24),
