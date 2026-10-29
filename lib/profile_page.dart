@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
+
   final String userName = "Fadhil Abi Untoro";
   final String role = "Mobile Developer & Mahasiswa";
+  final List<String> experience = const [
+    "PROJECT 1: Membuat website penjualan makanan pada toko makanda",
+    "Membuat sistem Klinik",
+    "Membuat tampilan UI/UX di figma",
+    "Membuat website laundry ",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +30,32 @@ class ProfilePage extends StatelessWidget {
             ProfileInfo(userName: userName, role: role),
             const SizedBox(height: 24),
             const ProfileStats(),
+            const SizedBox(height: 24),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Pengalaman Kerja",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const Divider(),
+            Expanded(
+              child: ListView.builder(
+                itemCount: experience.length,
+                itemBuilder: (context, index) {
+                  return Card(
+                    elevation: 2,
+                    margin: const EdgeInsets.symmetric(vertical: 6),
+                    child: ListTile(
+                      leading: const Icon(Icons.work, color: Colors.blueAccent),
+                      title: Text(
+                        experience[index],
+                      )
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
@@ -66,29 +100,29 @@ class ProfileInfo extends StatelessWidget {
     );
   }
 }
+
 class ProfileStats extends StatelessWidget {
   const ProfileStats({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              decoration: BoxDecoration(
-                color: Colors.blue[50],
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Statitem(count: "10", label: "proyek"),
-                  const SizedBox(width: 24),
-                  const Statitem(count: "1.2k", label: "Followers"),
-                  const SizedBox(width: 24),
-                  Statitem(count: "42", label: "Following"),
-                ],
-              ),
-             
-            );
+      padding: const EdgeInsets.symmetric(vertical: 12),
+      decoration: BoxDecoration(
+        color: Colors.blue[50],
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Statitem(count: "10", label: "proyek"),
+          const SizedBox(width: 24),
+          const Statitem(count: "1.2k", label: "Followers"),
+          const SizedBox(width: 24),
+          Statitem(count: "42", label: "Following"),
+        ],
+      ),
+    );
   }
 }
 
@@ -106,19 +140,11 @@ class Statitem extends StatelessWidget {
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color:Colors.blueAccent,
+            color: Colors.blueAccent,
           ),
         ),
-        const SizedBox(
-          height: 4,
-        ),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 14,
-            color: Colors.grey[600]
-          ),
-        )
+        const SizedBox(height: 4),
+        Text(label, style: TextStyle(fontSize: 14, color: Colors.grey[600])),
       ],
     );
   }

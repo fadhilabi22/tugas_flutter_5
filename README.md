@@ -6,6 +6,8 @@ Nim:1124160100
 -membenarkan tipe data di statitem dari int ke string
 -memisah kode main.dart dan profile page
 -memecah komponen biar ga terlalu panjang (profile avatar dan profile info)
+-menambahkan koma pada list experience
+-menggunakan expanded biar listviewernya ga error
 # Log Commit 
 # Hari 1
  Pagi
