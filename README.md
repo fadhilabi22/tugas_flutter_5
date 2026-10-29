@@ -14,7 +14,7 @@ Nim:1124160100
 2. refactor: extract avatar and info into custom widgets
 
 # Hari 2
- Pagi
+ # Pagi
 1. feat: add profile statistics row
- Siang
+ # Siang
 2. refactor: extract statics UI into ProfileStats and StatItem widgets
