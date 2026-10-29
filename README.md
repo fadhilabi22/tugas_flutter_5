@@ -7,12 +7,14 @@ Nim:1124160100
 -memisah kode main.dart dan profile page
 -memecah komponen biar ga terlalu panjang (profile avatar dan profile info)
 # Log Commit 
-Hari 1
-# Pagi
+# Hari 1
+ Pagi
 1. feat:create basic profile page structure with avatar and text
 # Siang
 2. refactor: extract avatar and info into custom widgets
 
-Hari 2
-# Pagi
+# Hari 2
+ Pagi
 1. feat: add profile statistics row
+ Siang
+2. refactor: extract statics UI into ProfileStats and StatItem widgets

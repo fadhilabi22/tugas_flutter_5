@@ -21,24 +21,7 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(width: 16),
             ProfileInfo(userName: userName, role: role),
             const SizedBox(height: 24),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              decoration: BoxDecoration(
-                color: Colors.blue[50],
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Statitem(count: "10", label: "proyek"),
-                  const SizedBox(width: 24),
-                  const Statitem(count: "1.2k", label: "Followers"),
-                  const SizedBox(height: 24),
-                  Statitem(count: "42", label: "following"),
-                ],
-              ),
-            ),
-            const SizedBox(height: 24),
+            const ProfileStats(),
           ],
         ),
       ),
@@ -81,6 +64,31 @@ class ProfileInfo extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+class ProfileStats extends StatelessWidget {
+  const ProfileStats({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              decoration: BoxDecoration(
+                color: Colors.blue[50],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Statitem(count: "10", label: "proyek"),
+                  const SizedBox(width: 24),
+                  const Statitem(count: "1.2k", label: "Followers"),
+                  const SizedBox(width: 24),
+                  Statitem(count: "42", label: "Following"),
+                ],
+              ),
+             
+            );
   }
 }
 
