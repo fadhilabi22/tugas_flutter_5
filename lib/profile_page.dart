@@ -19,10 +19,26 @@ class ProfilePage extends StatelessWidget {
           children: [
             const ProfileAvatar(),
             const SizedBox(width: 16),
-            ProfileInfo(
-              userName: userName, 
-              role: role
+            ProfileInfo(userName: userName, role: role),
+            const SizedBox(height: 24),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              decoration: BoxDecoration(
+                color: Colors.blue[50],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Statitem(count: "15", label: "proyek"),
+                  const SizedBox(width: 24),
+                  const Statitem(count: "1.2k", label: "Followers"),
+                  const SizedBox(height: 24),
+                  Statitem(count: "42", label: "following"),
+                ],
+              ),
             ),
+            const SizedBox(height: 24),
           ],
         ),
       ),
@@ -63,6 +79,38 @@ class ProfileInfo extends StatelessWidget {
           style: TextStyle(fontSize: 16, color: Colors.grey[700]),
           textAlign: TextAlign.center,
         ),
+      ],
+    );
+  }
+}
+
+class Statitem extends StatelessWidget {
+  final String count;
+  final String label;
+  const Statitem({super.key, required this.count, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          count,
+          style: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color:Colors.blueAccent,
+          ),
+        ),
+        const SizedBox(
+          height: 4,
+        ),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.grey[600]
+          ),
+        )
       ],
     );
   }
