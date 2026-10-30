@@ -20,6 +20,9 @@ Nim:1124160100
 1. feat: add profile statistics row
  # Siang
 2. refactor: extract statics UI into ProfileStats and StatItem widgets
+
 # Hari 3
  # Pagi
  1. feat: add scrollable experience list using ListView.builder
+ # Siang
+ 2. refactor: extract list tile into ExperienceCard widget and apply styling
