@@ -26,3 +26,7 @@ Nim:1124160100
  1. feat: add scrollable experience list using ListView.builder
  # Siang
  2. refactor: extract list tile into ExperienceCard widget and apply styling
+
+ # Hari 4
+ # Pagi
+ 1. refactor: convert ProfilePage to StatefulWidget for dynamic data 

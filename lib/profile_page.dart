@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
-  final String userName = "Fadhil Abi Untoro";
-  final String role = "Mobile Developer & Mahasiswa";
+  @override
+  State<ProfilePage> createState() => _ProfilePage();
+}
+
+class _ProfilePage extends State<ProfilePage> {
+  String userName = "Fadhil Abi Untoro";
+  String role = "Mobile Developer & Mahasiswa";
   final List<String> experience = const [
     "PROJECT 1: Membuat website penjualan makanan pada toko makanda",
     "Membuat sistem Klinik",
@@ -29,6 +34,17 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(width: 16),
             ProfileInfo(userName: userName, role: role),
             const SizedBox(height: 24),
+            ElevatedButton.icon(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("Fitur ini belom aktif pada modul statis"),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.edit),
+              label: const Text("Edit Profile"),
+            ),
             const ProfileStats(),
             const SizedBox(height: 24),
             const Align(
